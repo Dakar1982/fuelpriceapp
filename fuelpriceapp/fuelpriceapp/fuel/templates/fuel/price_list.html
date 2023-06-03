@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Fuel Prices</h2>
+  <ul>
+    {% for fuel_price in fuel_prices %}
+      <li>{{ fuel_price.fuel_type }} - {{ fuel_price.price }}</li>
+    {% empty %}
+      <li>No fuel prices available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

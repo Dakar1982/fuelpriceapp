@@ -1,0 +1,1 @@
+# plik konfiguracyjny dla projektu
