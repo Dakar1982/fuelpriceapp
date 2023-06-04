@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 from .apps.fuel.views import FuelPriceListView, FuelPriceCreateView, add_fuel_price
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     path('fuel/', FuelPriceListView.as_view(), name='fuel_price_list'),
     path('fuel/add/', FuelPriceCreateView.as_view(), name='fuel_price_create'),
     path('fuel/add_fuel/', add_fuel_price, name='add_fuel_price'),
+    path('fuel/', include('fuelpriceapp.apps.fuel.urls')),
 ]

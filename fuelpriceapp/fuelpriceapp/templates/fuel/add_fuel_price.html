@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add Fuel Price</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="fuel-type">Fuel Type:</label>
+    <input type="text" name="fuel-type" id="fuel-type">
+    <br>
+    <label for="price">Price:</label>
+    <input type="text" name="price" id="price">
+    <br>
+    <button type="submit">Add</button>
+  </form>
+{% endblock %}

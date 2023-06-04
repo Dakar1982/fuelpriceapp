@@ -17,11 +17,14 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+
+
 app_name = 'fuel'
 
 urlpatterns = [
     path('', views.FuelPriceListView.as_view(), name='price_list'),
     path('add/', views.FuelPriceCreateView.as_view(), name='price_create'),
-    path('fuel/add/', add_fuel_price, name='add_fuel_price'),
+#    path('fuel/add/', add_fuel_price, name='add_fuel_price'),
+    path('add/', views.FuelPriceCreateView.as_view(), name='add_fuel_price'),
 
 ]
