@@ -1,0 +1,22 @@
+{% extends 'fuel/base.html' %}
+
+{% block content %}
+    <h1>Sorted Fuel Prices</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="sort_option">Sort by:</label>
+        <select name="sort_option" id="sort_option">
+            <option value="price_asc">Price (Low to High)</option>
+            <option value="price_desc">Price (High to Low)</option>
+            <option value="city_asc">City (A to Z)</option>
+            <option value="city_desc">City (Z to A)</option>
+        </select>
+        <button type="submit">Sort</button>
+    </form>
+    {% for fuel in sorted_fuel_list %}
+        <div>
+            <h3>{{ fuel.city }} - {{ fuel.fuel_type }}</h3>
+            <p>Price: {{ fuel.price }}</p>
+            <a href="{% url 'fuel-detail' fuel.pk %}">View Details</a>
+        </div>
+    {% empty

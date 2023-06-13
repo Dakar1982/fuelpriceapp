@@ -1,0 +1,10 @@
+{% extends 'fuel/base.html' %}
+
+{% block content %}
+    <h1>Delete Fuel Price</h1>
+    <p>Are you sure you want to delete the fuel price for {{ fuel.city }} - {{ fuel.fuel_type }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

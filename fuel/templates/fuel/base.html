@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Price App</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'fuel-list' %}">Home</a></li>
+            <li><a href="{% url 'fuel-create' %}">Add Fuel Price</a></li>
+            <li><a href="{% url 'fuel-sort' %}">Sort by Price</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

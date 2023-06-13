@@ -1,0 +1,14 @@
+{% extends 'fuel/base.html' %}
+
+{% block content %}
+    <h1>Fuel Price List</h1>
+    {% for fuel in fuel_list %}
+        <div>
+            <h3>{{ fuel.city }} - {{ fuel.fuel_type }}</h3>
+            <p>Price: {{ fuel.price }}</p>
+            <a href="{% url 'fuel-detail' fuel.pk %}">View Details</a>
+        </div>
+    {% empty %}
+        <p>No fuel prices available.</p>
+    {% endfor %}
+{% endblock %}
